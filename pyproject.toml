@@ -1,0 +1,34 @@
+[tool.ruff]
+target-version = "py313"
+line-length = 100
+cache-dir = "tmp/ruff-cache"
+
+[tool.ruff.lint]
+select = ["E4", "E7", "E9", "F", "I"]
+
+[tool.mypy]
+python_version = "3.13"
+mypy_path = "src"
+cache_dir = "tmp/mypy-cache"
+check_untyped_defs = true
+warn_unused_ignores = true
+files = ["src/data_story"]
+
+[[tool.mypy.overrides]]
+module = ["nicegui.*"]
+follow_imports = "skip"
+
+[[tool.mypy.overrides]]
+module = ["pandas.*", "openpyxl.*"]
+ignore_missing_imports = true
+follow_imports = "skip"
+
+[[tool.mypy.overrides]]
+module = ["sklearn.*", "scipy.*"]
+ignore_missing_imports = true
+follow_imports = "skip"
+
+[[tool.mypy.overrides]]
+module = ["onnxruntime.*", "tokenizers.*", "duckdb.*"]
+ignore_missing_imports = true
+follow_imports = "skip"

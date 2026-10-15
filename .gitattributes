@@ -1,0 +1,9 @@
+# Preserve upstream assets byte-for-byte, including their licenses and checksums.
+src/data_story/assets/vendor/toastui/* -text -whitespace
+
+# Keep the demo dataset byte-for-byte (checksum in samples/melb_data.description.md).
+samples/melb_data.csv -text
+
+# Vendored MathJax and local fonts for stage 04: keep byte-for-byte.
+src/data_story/assets/vendor/mathjax/* -text -whitespace
+src/data_story/assets/fonts/open-sans/*.woff2 binary

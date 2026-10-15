@@ -1,0 +1,26 @@
+/* Charts use the lecture font/palette; dashboard typography remains unchanged. */
+@font-face {font-family:'Open Sans';font-style:normal;font-weight:400;font-display:swap;src:url('/assets/fonts/open-sans/cyrillic.woff2') format('woff2');unicode-range:U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116;}
+@font-face {font-family:'Open Sans';font-style:normal;font-weight:400;font-display:swap;src:url('/assets/fonts/open-sans/latin.woff2') format('woff2');}
+.chart-options {display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px;width:100%;margin:16px 0;}
+.chart-options .q-field {width:100%;}
+.heatmap-wrap {width:100%;min-width:0;}
+.heatmap-scroll {width:100%;max-width:100%;overflow-x:auto;}
+.heatmap {display:block;max-width:none;}
+.heatmap-cell {cursor:pointer;}
+.heatmap-cell:focus {outline:none;}
+.heatmap-cell:focus rect {stroke:#000;stroke-width:3;stroke-dasharray:4 2;}
+.heatmap-detail {min-height:48px;padding:12px 0;font-size:14px;overflow-wrap:anywhere;}
+.math-formula {overflow-x:auto;padding:12px 0;width:100%;color:#202124;font-size:18px;}
+.math-formula mjx-container[display="true"] {text-align:left!important;margin:0!important;}
+.heatmap-scroll svg text {user-select:none;}
+.chart-choice {display:flex;flex-wrap:wrap;gap:16px;align-items:center;width:100%;margin:8px 0;}
+.chart-type {border:1px solid #c9ced6;}
+.chart-options-title {font-weight:600;margin-top:12px;}
+.chart-facts {font-size:14px;}
+.histogram {display:block;max-width:none;}
+.chart-item {cursor:pointer;}
+.chart-item:focus {outline:none;}
+.chart-item:focus rect + rect {stroke:#000;stroke-width:2;stroke-dasharray:4 2;}
+.chart-field, .chart-choice .q-select {min-width:260px;}
+.scatter {display:block;max-width:none;}
+.chart-type {flex-wrap:wrap;max-width:100%;}

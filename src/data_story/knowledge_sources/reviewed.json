@@ -1,0 +1,968 @@
+{
+  "version": 1,
+  "review": "099; 2026-10-12; author requested removing unrelated book examples. Full text of every retained fragment reviewed. IDs and exact text hashes fail closed when extraction changes. Review 104 (2026-10-12, at the author's request to strengthen RAG): 78 more passages read in full and added — overfitting/underfitting and train-vs-test R², dummy/one-hot coding and integer-coded categories, skewed targets and log transforms, cross-validation and metric choice, intercept, standardised coefficients, holding other variables constant, heteroscedasticity, VIF/multicollinearity, residual checks, skewness/outliers/median vs mean, coefficient of variation, Type I/II errors, R²/adjusted R², regression assumptions, chart choice by purpose, emphasis, table/graph checklists, findings vs judgements, presenting results. Still excluded: politics and regional case studies, news, factual errors (e.g. a residual plot 'diagonal' rule), lost formulas.",
+  "excluded": "Case-study narratives, politics/geography, news, conversations, unrelated algorithms, exercises, OCR debris and misleading/missing formulas. Original PDFs remain unchanged.",
+  "topics": {
+    "ziller-introstats": "p-value, припущення OLS, гетероскедастичність, VIF, залишки, вільний член, стандартизовані коефіцієнти, контрольні змінні, гістограми.",
+    "muller-guido-ml-python": "Перенавчання/недонавчання, R² навчання й тесту, one-hot і категорії-числа, логарифм скошених даних, крос-валідація, вибір метрики, однакова підготовка вибірок.",
+    "zaki-meira-data-mining": "Типи ознак; середнє проти медіани, стійкість до викидів.",
+    "boularouk-data-analyst": "Контекст, кореляція й причинність, агрегування, вибір графіка за метою, акцент, підписи, подання результатів, обмеження моделей.",
+    "saunders-research-methods": "Типи даних і пропуски, асиметрія й викиди, описові показники, помилки I/II роду, R² і скоригований R², припущення регресії, чек-лист таблиць і графіків, результати проти висновків, структура звіту."
+  },
+  "fragments": [
+    {
+      "id": "ziller-introstats-0004",
+      "book": "ziller-introstats",
+      "pages": [
+        10,
+        11
+      ],
+      "text_sha256": "54844f134631451ed3a0caf82121c7eaabd185be03a7f9a02f3a1d3244dfe069"
+    },
+    {
+      "id": "ziller-introstats-0014",
+      "book": "ziller-introstats",
+      "pages": [
+        18,
+        21
+      ],
+      "text_sha256": "c4c52ac88028e8c606db79f5ff650906304b969ad6438f9688b6543933d63840"
+    },
+    {
+      "id": "ziller-introstats-0016",
+      "book": "ziller-introstats",
+      "pages": [
+        21,
+        22
+      ],
+      "text_sha256": "506a3f822c10db0e2ffdf44f886b14c566588c17c5b81899cdcf4d4d56339aca"
+    },
+    {
+      "id": "ziller-introstats-0069",
+      "book": "ziller-introstats",
+      "pages": [
+        59,
+        60
+      ],
+      "text_sha256": "6f071d1c6cef955fe170d5fb2136c5c652022e70092722eb24ffb4c5608f5c7c"
+    },
+    {
+      "id": "ziller-introstats-0070",
+      "book": "ziller-introstats",
+      "pages": [
+        60,
+        61
+      ],
+      "text_sha256": "34453d232a267ebb24aa16ed4917d26d0b074d3b887616b8d37b175c4d44c774"
+    },
+    {
+      "id": "ziller-introstats-0078",
+      "book": "ziller-introstats",
+      "pages": [
+        67,
+        68
+      ],
+      "text_sha256": "1af759859acb3554c778f7e5c723639603334e35185537df85c421a9c91ffcd9"
+    },
+    {
+      "id": "ziller-introstats-0080",
+      "book": "ziller-introstats",
+      "pages": [
+        70,
+        71
+      ],
+      "text_sha256": "9e26fc625a8521687b9e59a39b2ebc57195fae3931420e63d3821b338ac01d43"
+    },
+    {
+      "id": "ziller-introstats-0084",
+      "book": "ziller-introstats",
+      "pages": [
+        73,
+        74
+      ],
+      "text_sha256": "05ba9a5e096a2bd668a409964be050997195eaa8abf0a65d3276b6c3dc96af50"
+    },
+    {
+      "id": "ziller-introstats-0085",
+      "book": "ziller-introstats",
+      "pages": [
+        74,
+        74
+      ],
+      "text_sha256": "1feced7dc96429f37f718402ae384c041c87b2c9b20461b916e264863278648b"
+    },
+    {
+      "id": "ziller-introstats-0086",
+      "book": "ziller-introstats",
+      "pages": [
+        74,
+        74
+      ],
+      "text_sha256": "0a7074a2e82be6e7fd9f20613f18438c176e35ece4552d506afcb63fd209b068"
+    },
+    {
+      "id": "ziller-introstats-0095",
+      "book": "ziller-introstats",
+      "pages": [
+        78,
+        79
+      ],
+      "text_sha256": "0d99d26286cfed37de49f928357f4e0dcac1417ddfeb0a689468db1c76f60fdd"
+    },
+    {
+      "id": "ziller-introstats-0096",
+      "book": "ziller-introstats",
+      "pages": [
+        78,
+        79
+      ],
+      "text_sha256": "6711f3be9a1c8bbd618957b691bad9d43686a2d5c94312e5d75b485acad296d6"
+    },
+    {
+      "id": "ziller-introstats-0097",
+      "book": "ziller-introstats",
+      "pages": [
+        79,
+        79
+      ],
+      "text_sha256": "b6bde6064cd3faf07ff822f612d1a8360332a81c1f9186b5a4f47c3e6e9fa501"
+    },
+    {
+      "id": "ziller-introstats-0098",
+      "book": "ziller-introstats",
+      "pages": [
+        79,
+        80
+      ],
+      "text_sha256": "f91c14e420de2a1056b67e69fe9280a8606de8ecf1b90bde8194a32235bb4882"
+    },
+    {
+      "id": "ziller-introstats-0099",
+      "book": "ziller-introstats",
+      "pages": [
+        80,
+        82
+      ],
+      "text_sha256": "7fae03c43268a6ffc872c67f622dc41a8bfaaae29476324ca7c8e2f9c0b6e85a"
+    },
+    {
+      "id": "ziller-introstats-0100",
+      "book": "ziller-introstats",
+      "pages": [
+        81,
+        82
+      ],
+      "text_sha256": "24b4e82696c16bbdff91c158c4110622c2c418624b62b1a4142f3126060d34a9"
+    },
+    {
+      "id": "ziller-introstats-0102",
+      "book": "ziller-introstats",
+      "pages": [
+        84,
+        85
+      ],
+      "text_sha256": "662a1e8ec10fbf0430de48a9c744b9e08878b9c47e07692fb4d9a9af826a505e"
+    },
+    {
+      "id": "muller-guido-ml-python-0005",
+      "book": "muller-guido-ml-python",
+      "pages": [
+        42,
+        42
+      ],
+      "text_sha256": "45e044a8018b3e16723b7fa95bb62f6a31f85ab76e2863d6711d440352092559"
+    },
+    {
+      "id": "muller-guido-ml-python-0006",
+      "book": "muller-guido-ml-python",
+      "pages": [
+        42,
+        42
+      ],
+      "text_sha256": "2ba92b236c3822d917cd20d4ea492e83323673ea71b97f07d0c48231e3582366"
+    },
+    {
+      "id": "muller-guido-ml-python-0009",
+      "book": "muller-guido-ml-python",
+      "pages": [
+        60,
+        61
+      ],
+      "text_sha256": "ac31eb3ba4c967e81515276d5d7ed4815f46a1558bbac68091325628891e1133"
+    },
+    {
+      "id": "muller-guido-ml-python-0010",
+      "book": "muller-guido-ml-python",
+      "pages": [
+        61,
+        62
+      ],
+      "text_sha256": "25cff232ec73fa808a2ad0b3b6815647f3de67ef5c536f985112518908331335"
+    },
+    {
+      "id": "muller-guido-ml-python-0011",
+      "book": "muller-guido-ml-python",
+      "pages": [
+        62,
+        63
+      ],
+      "text_sha256": "79c8c8537b273f75cc0b5bea2b5a633ec102dba14c3a6609102553fb437a5745"
+    },
+    {
+      "id": "muller-guido-ml-python-0031",
+      "book": "muller-guido-ml-python",
+      "pages": [
+        152,
+        152
+      ],
+      "text_sha256": "42b6d4b3be708b1914ec68b6d6c0e825f7d2e4f13012f2b50185c21a2a1fd544"
+    },
+    {
+      "id": "muller-guido-ml-python-0036",
+      "book": "muller-guido-ml-python",
+      "pages": [
+        227,
+        228
+      ],
+      "text_sha256": "34a21bb0c84930a75380f0015438cd0785631058924b876efb13a8b5e988a71d"
+    },
+    {
+      "id": "muller-guido-ml-python-0041",
+      "book": "muller-guido-ml-python",
+      "pages": [
+        231,
+        232
+      ],
+      "text_sha256": "ffdd41a6df2e4255ec04fd5f4ca321b6d31007472d26add4fb147e3d84f84729"
+    },
+    {
+      "id": "muller-guido-ml-python-0042",
+      "book": "muller-guido-ml-python",
+      "pages": [
+        231,
+        232
+      ],
+      "text_sha256": "563dd42d256e2970249510f90445bc75f1038caa03d07f0be852caad41fff2dc"
+    },
+    {
+      "id": "muller-guido-ml-python-0043",
+      "book": "muller-guido-ml-python",
+      "pages": [
+        232,
+        233
+      ],
+      "text_sha256": "fdac9e0b4603c572219559ee036e66f3484b167d9c5c24117cb7c630874703f6"
+    },
+    {
+      "id": "muller-guido-ml-python-0055",
+      "book": "muller-guido-ml-python",
+      "pages": [
+        246,
+        247
+      ],
+      "text_sha256": "04231eaef2f4eb4affc400874923e03e5291df67f2c19ec95f2f01df7d517fed"
+    },
+    {
+      "id": "muller-guido-ml-python-0056",
+      "book": "muller-guido-ml-python",
+      "pages": [
+        247,
+        249
+      ],
+      "text_sha256": "290f7860d01469ffc2904e0b514a233d88d1c1b5d8629806ba1e4abc9b168112"
+    },
+    {
+      "id": "muller-guido-ml-python-0058",
+      "book": "muller-guido-ml-python",
+      "pages": [
+        249,
+        250
+      ],
+      "text_sha256": "4ba01435ee3e1024415237c60613a3ca2f8b8fbd661b68dbfa152d87fdee4542"
+    },
+    {
+      "id": "muller-guido-ml-python-0067",
+      "book": "muller-guido-ml-python",
+      "pages": [
+        255,
+        256
+      ],
+      "text_sha256": "7af95e085aafccd06df35cdaad2b337dd54e7edf833f8e6286ab0c0150e1c825"
+    },
+    {
+      "id": "muller-guido-ml-python-0070",
+      "book": "muller-guido-ml-python",
+      "pages": [
+        257,
+        258
+      ],
+      "text_sha256": "a797bb8711f2085cc502f6c1438631b4bd23e4bc6b4a61b5163939713c7dc135"
+    },
+    {
+      "id": "muller-guido-ml-python-0078",
+      "book": "muller-guido-ml-python",
+      "pages": [
+        266,
+        266
+      ],
+      "text_sha256": "ea42f6fda1557eb61b819dc1d668254422c445575275f0d81e4249cd8492738e"
+    },
+    {
+      "id": "muller-guido-ml-python-0081",
+      "book": "muller-guido-ml-python",
+      "pages": [
+        268,
+        268
+      ],
+      "text_sha256": "307d127a3c6e8c09458a3185f705d385c940c102ff561fe57dc384c8ec455292"
+    },
+    {
+      "id": "muller-guido-ml-python-0082",
+      "book": "muller-guido-ml-python",
+      "pages": [
+        268,
+        268
+      ],
+      "text_sha256": "b5f62caa73198d99439917a7f9b44b823720b88efb8447b5028fbbaf1f2359c8"
+    },
+    {
+      "id": "muller-guido-ml-python-0114",
+      "book": "muller-guido-ml-python",
+      "pages": [
+        316,
+        317
+      ],
+      "text_sha256": "addfd4c9cb8b3e13352346e3798743d997faed3c781f2d891ad365aea8719469"
+    },
+    {
+      "id": "zaki-meira-data-mining-0004",
+      "book": "zaki-meira-data-mining",
+      "pages": [
+        14,
+        15
+      ],
+      "text_sha256": "6b678d8c71ec719f778ad17e23451285df2ed79cfb5c839751283d085001b33d"
+    },
+    {
+      "id": "zaki-meira-data-mining-0015",
+      "book": "zaki-meira-data-mining",
+      "pages": [
+        49,
+        49
+      ],
+      "text_sha256": "8ae94719bc0c46ee5db6eb903a04cb02f202188a57a25c78b400771b7a1e9655"
+    },
+    {
+      "id": "zaki-meira-data-mining-0016",
+      "book": "zaki-meira-data-mining",
+      "pages": [
+        49,
+        49
+      ],
+      "text_sha256": "d6b06cbcb6c5c0c3aca7dc2559448024e7ded1f205c2b5bdce946b6a0dd726be"
+    },
+    {
+      "id": "boularouk-data-analyst-0003",
+      "book": "boularouk-data-analyst",
+      "pages": [
+        41,
+        42
+      ],
+      "text_sha256": "241759156718e8276a304340fe39fe5e2875918ec23efcf3cef4529a76a5358e"
+    },
+    {
+      "id": "boularouk-data-analyst-0004",
+      "book": "boularouk-data-analyst",
+      "pages": [
+        42,
+        43
+      ],
+      "text_sha256": "7aa1c983b7b2f9d8d5657d9aacca1bdfe5b853454cc0ffd2d1f52ad2c6bfc636"
+    },
+    {
+      "id": "boularouk-data-analyst-0018",
+      "book": "boularouk-data-analyst",
+      "pages": [
+        81,
+        82
+      ],
+      "text_sha256": "38ec4a5e6df2df81d031f620d061356b8107c3437a1f1fcb3e9e8e2fdd19900c"
+    },
+    {
+      "id": "boularouk-data-analyst-0044",
+      "book": "boularouk-data-analyst",
+      "pages": [
+        107,
+        108
+      ],
+      "text_sha256": "d7635b58a86d4fabafbd228b04e5498ba111c11ee2bb08a4d476d26f2d53fabd"
+    },
+    {
+      "id": "boularouk-data-analyst-0045",
+      "book": "boularouk-data-analyst",
+      "pages": [
+        108,
+        109
+      ],
+      "text_sha256": "90cb52f37a2fde3170c886565a413b9138640b4f2a6e4210315de6841125d27c"
+    },
+    {
+      "id": "boularouk-data-analyst-0046",
+      "book": "boularouk-data-analyst",
+      "pages": [
+        109,
+        109
+      ],
+      "text_sha256": "6b814d92fe056f186b600aabd69d17cfe7396dc0fd00f098014bb394d37690f7"
+    },
+    {
+      "id": "boularouk-data-analyst-0047",
+      "book": "boularouk-data-analyst",
+      "pages": [
+        109,
+        110
+      ],
+      "text_sha256": "f2db6896296de245c89b701a2d7328d3b4a8e0505418911817364eeef2a23b8b"
+    },
+    {
+      "id": "boularouk-data-analyst-0056",
+      "book": "boularouk-data-analyst",
+      "pages": [
+        117,
+        118
+      ],
+      "text_sha256": "50745c9645df231e7902308065ba0dd434bb7194789e34243dc7da9eef2ad4d9"
+    },
+    {
+      "id": "boularouk-data-analyst-0068",
+      "book": "boularouk-data-analyst",
+      "pages": [
+        130,
+        130
+      ],
+      "text_sha256": "48f3f8aaee939496ea83293c05a82f2cc7b78f45a67c9d5196c3dd83c763a213"
+    },
+    {
+      "id": "boularouk-data-analyst-0073",
+      "book": "boularouk-data-analyst",
+      "pages": [
+        133,
+        134
+      ],
+      "text_sha256": "62c5743b2dbe0228967b8b5bbc2f60c4a833245e97154b44e08c257c672df200"
+    },
+    {
+      "id": "boularouk-data-analyst-0074",
+      "book": "boularouk-data-analyst",
+      "pages": [
+        134,
+        135
+      ],
+      "text_sha256": "37416f558ca7efbe2153bc0b07a264806fe9ddf2f3ee6b62b8cec57fbcb5f87c"
+    },
+    {
+      "id": "boularouk-data-analyst-0079",
+      "book": "boularouk-data-analyst",
+      "pages": [
+        138,
+        138
+      ],
+      "text_sha256": "4a861160ff8918c6de84db20b3232a4e3c5960197bf6ac112a955825ad6a069c"
+    },
+    {
+      "id": "boularouk-data-analyst-0083",
+      "book": "boularouk-data-analyst",
+      "pages": [
+        141,
+        141
+      ],
+      "text_sha256": "b05f73b34750f5cb2576c5b49b844d8e0fed633f36e069b22255c1546941f8e7"
+    },
+    {
+      "id": "boularouk-data-analyst-0084",
+      "book": "boularouk-data-analyst",
+      "pages": [
+        141,
+        142
+      ],
+      "text_sha256": "ae52aee2af6ade1f3c1b0138cf97ee115f9468f40d9c92d96d5f9c8a474279fc"
+    },
+    {
+      "id": "boularouk-data-analyst-0085",
+      "book": "boularouk-data-analyst",
+      "pages": [
+        142,
+        143
+      ],
+      "text_sha256": "e3c5bfde073a7f9c79b259c3adefd697965a2520e9df78de5f4662a1b28e0cce"
+    },
+    {
+      "id": "boularouk-data-analyst-0086",
+      "book": "boularouk-data-analyst",
+      "pages": [
+        143,
+        143
+      ],
+      "text_sha256": "cef618337698fedead94757e101eec933f2a1050c529dcf8591eaa42ea97e999"
+    },
+    {
+      "id": "boularouk-data-analyst-0087",
+      "book": "boularouk-data-analyst",
+      "pages": [
+        143,
+        144
+      ],
+      "text_sha256": "77e6a6b3411078d20fe0edd313d9195bfffa8c209877a72241dceeb2fd11339b"
+    },
+    {
+      "id": "boularouk-data-analyst-0088",
+      "book": "boularouk-data-analyst",
+      "pages": [
+        144,
+        145
+      ],
+      "text_sha256": "83508f2db90f3f9cb33243f01dd0f79eb5a42b6bd6aa2a17476c8eb56a03273f"
+    },
+    {
+      "id": "boularouk-data-analyst-0091",
+      "book": "boularouk-data-analyst",
+      "pages": [
+        146,
+        147
+      ],
+      "text_sha256": "1168e402b38b4ebaf390db5c517687d8736066bea2bfaa49fa9fda44e92d979f"
+    },
+    {
+      "id": "boularouk-data-analyst-0092",
+      "book": "boularouk-data-analyst",
+      "pages": [
+        147,
+        148
+      ],
+      "text_sha256": "595896ab9098aadbe92a627783e62961a31f023545cf58814b089c51ea6e251c"
+    },
+    {
+      "id": "boularouk-data-analyst-0093",
+      "book": "boularouk-data-analyst",
+      "pages": [
+        148,
+        149
+      ],
+      "text_sha256": "1588fb4b5cd1b5cedad39879a697c753296db0afebecaf1cd461e2967e018293"
+    },
+    {
+      "id": "boularouk-data-analyst-0094",
+      "book": "boularouk-data-analyst",
+      "pages": [
+        149,
+        150
+      ],
+      "text_sha256": "76b98f148d623df289777a50782cfd55382705184253128dc5184f89e144c9e0"
+    },
+    {
+      "id": "boularouk-data-analyst-0107",
+      "book": "boularouk-data-analyst",
+      "pages": [
+        163,
+        164
+      ],
+      "text_sha256": "b28cddd7c77b25f26d111fdfbeafef0ab9e99743d105f641554abb5b43d7adf8"
+    },
+    {
+      "id": "saunders-research-methods-0007",
+      "book": "saunders-research-methods",
+      "pages": [
+        602,
+        602
+      ],
+      "text_sha256": "bc444f60c2cc994e5a85a81983357736b9649465857c3e8cec1a83207971f0ac"
+    },
+    {
+      "id": "saunders-research-methods-0013",
+      "book": "saunders-research-methods",
+      "pages": [
+        605,
+        605
+      ],
+      "text_sha256": "f99f58fd558117a70503a731de69faa5671f44feed0fe3340dca41053184d05c"
+    },
+    {
+      "id": "saunders-research-methods-0014",
+      "book": "saunders-research-methods",
+      "pages": [
+        605,
+        606
+      ],
+      "text_sha256": "195b0ca7ac4aef753e8606607e8da88a6ef27cd7a58be509d013d0d566130689"
+    },
+    {
+      "id": "saunders-research-methods-0027",
+      "book": "saunders-research-methods",
+      "pages": [
+        611,
+        611
+      ],
+      "text_sha256": "132ed5b34609b4ebbbc50c87da7d51d487c2281884ff4267e419f85a9d7a6efc"
+    },
+    {
+      "id": "saunders-research-methods-0044",
+      "book": "saunders-research-methods",
+      "pages": [
+        617,
+        618
+      ],
+      "text_sha256": "5054b65345705fb4b4c313cb171a3cc1755d9cca9c5f9191b4a45653bcb5977d"
+    },
+    {
+      "id": "saunders-research-methods-0045",
+      "book": "saunders-research-methods",
+      "pages": [
+        618,
+        618
+      ],
+      "text_sha256": "53242e57c8e8d555bfce999cead0c9a9133200638c4ac3d1bac2724d00b8dd9b"
+    },
+    {
+      "id": "saunders-research-methods-0060",
+      "book": "saunders-research-methods",
+      "pages": [
+        628,
+        628
+      ],
+      "text_sha256": "cb6442bd1c80aa87bf3d277ce01391907e54f773183991ec230a7347dca8b609"
+    },
+    {
+      "id": "saunders-research-methods-0062",
+      "book": "saunders-research-methods",
+      "pages": [
+        629,
+        629
+      ],
+      "text_sha256": "4518bd293079730a6a74897bdc77bdeeb0f436995ce7e781515c5904d3812649"
+    },
+    {
+      "id": "saunders-research-methods-0071",
+      "book": "saunders-research-methods",
+      "pages": [
+        636,
+        636
+      ],
+      "text_sha256": "a65a73898ab42cd7e57b74d8544f9749d2a1238f0ba395d4dbf98599abd6a857"
+    },
+    {
+      "id": "saunders-research-methods-0073",
+      "book": "saunders-research-methods",
+      "pages": [
+        636,
+        637
+      ],
+      "text_sha256": "a75b8fddcaeaa43488ddac9a76726da0247259400aecf08dc79875b67903a6ac"
+    },
+    {
+      "id": "saunders-research-methods-0078",
+      "book": "saunders-research-methods",
+      "pages": [
+        639,
+        639
+      ],
+      "text_sha256": "d8964def067c8b3a9f6f767361468bd011771b7a1e027a4cb908a020f4332710"
+    },
+    {
+      "id": "saunders-research-methods-0079",
+      "book": "saunders-research-methods",
+      "pages": [
+        639,
+        639
+      ],
+      "text_sha256": "4704c3142f60a95de2bd50127af015dd923e61c20c9e9333655b98033f808735"
+    },
+    {
+      "id": "saunders-research-methods-0080",
+      "book": "saunders-research-methods",
+      "pages": [
+        639,
+        640
+      ],
+      "text_sha256": "bab787e547fc2effb128c92b3a91d98a539ccff411c5475a07d776388c90955a"
+    },
+    {
+      "id": "saunders-research-methods-0082",
+      "book": "saunders-research-methods",
+      "pages": [
+        640,
+        641
+      ],
+      "text_sha256": "e771b142f33c5b0ab90854ef65f03e744d10dafda24cd9c1385ffd3b5a7c3393"
+    },
+    {
+      "id": "saunders-research-methods-0084",
+      "book": "saunders-research-methods",
+      "pages": [
+        641,
+        641
+      ],
+      "text_sha256": "34baefe107aa005e3aa2a309d7ba0133cc3235f45bdb919c8d91daf18c91b3c7"
+    },
+    {
+      "id": "saunders-research-methods-0087",
+      "book": "saunders-research-methods",
+      "pages": [
+        642,
+        643
+      ],
+      "text_sha256": "3015359639fb13bd53a82cfbb0ba417a29cc359f946ebb4ad17f13b4bce21958"
+    },
+    {
+      "id": "saunders-research-methods-0090",
+      "book": "saunders-research-methods",
+      "pages": [
+        643,
+        644
+      ],
+      "text_sha256": "0769288517f3a044c8c3aa4b0ff65181ca46102122ab66157095b42ce121472d"
+    },
+    {
+      "id": "saunders-research-methods-0093",
+      "book": "saunders-research-methods",
+      "pages": [
+        645,
+        645
+      ],
+      "text_sha256": "ba33749f9fd1d0c479246e42e39c36109f33439651910aa8fe4e6894741abdb0"
+    },
+    {
+      "id": "saunders-research-methods-0094",
+      "book": "saunders-research-methods",
+      "pages": [
+        645,
+        646
+      ],
+      "text_sha256": "6d41f951a9c4a2c4e8cf00a7096701661e64dc37c4799d7452da3c4f5e1eb478"
+    },
+    {
+      "id": "saunders-research-methods-0095",
+      "book": "saunders-research-methods",
+      "pages": [
+        646,
+        646
+      ],
+      "text_sha256": "525b3fc43dc8817696b5920df92ccfef9f445db358675421044c362543815c48"
+    },
+    {
+      "id": "saunders-research-methods-0114",
+      "book": "saunders-research-methods",
+      "pages": [
+        654,
+        654
+      ],
+      "text_sha256": "62ec713cfb850f5b47deff0bea25a540349c5ab3d4cdd655ca968c91ad6d8bf9"
+    },
+    {
+      "id": "saunders-research-methods-0115",
+      "book": "saunders-research-methods",
+      "pages": [
+        654,
+        655
+      ],
+      "text_sha256": "f7e4d3444f467684c380fa7956435b18516bea9b738328683b4edbcbf89e1c96"
+    },
+    {
+      "id": "saunders-research-methods-0119",
+      "book": "saunders-research-methods",
+      "pages": [
+        656,
+        656
+      ],
+      "text_sha256": "cfda012636f355120481756b8218fa7104438215a4b4e8b6841db6e7f4d38b6e"
+    },
+    {
+      "id": "saunders-research-methods-0120",
+      "book": "saunders-research-methods",
+      "pages": [
+        656,
+        657
+      ],
+      "text_sha256": "d18984bdf4f9dd2a828c9c7ac72dbe29809ac979bab6828ab22acc0b29711785"
+    },
+    {
+      "id": "saunders-research-methods-0121",
+      "book": "saunders-research-methods",
+      "pages": [
+        657,
+        657
+      ],
+      "text_sha256": "b1164019ffbaa43026a8be3dd962d3311921ba33675569fb1f3de898897654d9"
+    },
+    {
+      "id": "saunders-research-methods-0125",
+      "book": "saunders-research-methods",
+      "pages": [
+        659,
+        659
+      ],
+      "text_sha256": "35547fe76851d3e21fb59420d13182116565557369eb98df2f6c950f3ce6852e"
+    },
+    {
+      "id": "saunders-research-methods-0126",
+      "book": "saunders-research-methods",
+      "pages": [
+        659,
+        660
+      ],
+      "text_sha256": "1bace5e281e1afc804fa17b0f6db860a8967efaf590de5bde3919db588e0d58d"
+    },
+    {
+      "id": "saunders-research-methods-0128",
+      "book": "saunders-research-methods",
+      "pages": [
+        660,
+        660
+      ],
+      "text_sha256": "34847a731a6769e0d82682b937c3d82fdc0f1326b57b9038c95898603d449da0"
+    },
+    {
+      "id": "saunders-research-methods-0129",
+      "book": "saunders-research-methods",
+      "pages": [
+        660,
+        661
+      ],
+      "text_sha256": "d17501cd09201e9e935037474049a282edbcbdd3a35c0a5e843a7620256650da"
+    },
+    {
+      "id": "saunders-research-methods-0130",
+      "book": "saunders-research-methods",
+      "pages": [
+        661,
+        661
+      ],
+      "text_sha256": "a2fc7e1b17483e84237227d984951d9aec6bd7b6eacab0914a137172b2ee3e90"
+    },
+    {
+      "id": "saunders-research-methods-0168",
+      "book": "saunders-research-methods",
+      "pages": [
+        756,
+        756
+      ],
+      "text_sha256": "303332a7ec3953eb2c7a786e8990773889ada47c2882d63c4b48a7e540c8ddfa"
+    },
+    {
+      "id": "saunders-research-methods-0172",
+      "book": "saunders-research-methods",
+      "pages": [
+        757,
+        757
+      ],
+      "text_sha256": "393325cc1095d17293d8a4cd0103cffe69929528dbcb0dfcab5a95f66cf5c71c"
+    },
+    {
+      "id": "saunders-research-methods-0173",
+      "book": "saunders-research-methods",
+      "pages": [
+        757,
+        758
+      ],
+      "text_sha256": "64624f805a0b4b5d42792c70ab0e0e7b9fe8428860e3806d7f6bf47f501e9698"
+    },
+    {
+      "id": "saunders-research-methods-0184",
+      "book": "saunders-research-methods",
+      "pages": [
+        761,
+        762
+      ],
+      "text_sha256": "93ef31fee125581c746e86d96d88ed4afd6767e182556bb9ce625c63117a9a45"
+    },
+    {
+      "id": "saunders-research-methods-0185",
+      "book": "saunders-research-methods",
+      "pages": [
+        762,
+        762
+      ],
+      "text_sha256": "3969ba8b8a9f9e35257f028844325c5f5f92dc48dc7d2f36de74be1ef5b35459"
+    },
+    {
+      "id": "saunders-research-methods-0186",
+      "book": "saunders-research-methods",
+      "pages": [
+        762,
+        762
+      ],
+      "text_sha256": "904ed74b30403cb69c10016830015351beef96e8c70d828d51c250a75bd00cbe"
+    },
+    {
+      "id": "saunders-research-methods-0187",
+      "book": "saunders-research-methods",
+      "pages": [
+        762,
+        762
+      ],
+      "text_sha256": "c87a6dc390ac1cdfc71662ed4e87d79fbb70563e4107a92cc63e11e7e3c1c03e"
+    },
+    {
+      "id": "saunders-research-methods-0190",
+      "book": "saunders-research-methods",
+      "pages": [
+        770,
+        771
+      ],
+      "text_sha256": "0f75d5d82b6c90ee47cc9071d03d62b422b9cf7632523c68650162812c3da778"
+    },
+    {
+      "id": "saunders-research-methods-0191",
+      "book": "saunders-research-methods",
+      "pages": [
+        771,
+        771
+      ],
+      "text_sha256": "564734a58d9417d4b56dc967a8646106fe69600851c383569aeb50fc077208e3"
+    },
+    {
+      "id": "saunders-research-methods-0192",
+      "book": "saunders-research-methods",
+      "pages": [
+        771,
+        771
+      ],
+      "text_sha256": "57f9e9db6963c2370572c415e2d1728bff0a89923daff9cc97a43b8f3907d1c0"
+    },
+    {
+      "id": "saunders-research-methods-0193",
+      "book": "saunders-research-methods",
+      "pages": [
+        771,
+        772
+      ],
+      "text_sha256": "c7f4e1dad6a66fca27d78d557a5dbced80536a85e590795332b795cfa2d7e7eb"
+    },
+    {
+      "id": "saunders-research-methods-0194",
+      "book": "saunders-research-methods",
+      "pages": [
+        772,
+        772
+      ],
+      "text_sha256": "a36d034eeeae65b2d7fed40782e9273fbdfc76e2f64ba4f47111f166d4560672"
+    },
+    {
+      "id": "saunders-research-methods-0198",
+      "book": "saunders-research-methods",
+      "pages": [
+        773,
+        773
+      ],
+      "text_sha256": "9f1867519ff466e34a296e788eb210cee5da1f30973746c1a26df0a41b6a2073"
+    },
+    {
+      "id": "saunders-research-methods-0204",
+      "book": "saunders-research-methods",
+      "pages": [
+        775,
+        775
+      ],
+      "text_sha256": "6eb2fcb51f01d6fb0dfe50f90e8ef450a148d4ab614ce5dc45eb69a8434ed320"
+    }
+  ]
+}

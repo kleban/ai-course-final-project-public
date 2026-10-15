@@ -1,0 +1,605 @@
+/* Data Story — dashboard style.
+   Layout, palette and "academic" rules (no rounded corners, no shadows, thin rules instead of cards)
+   follow the author's dashboard «Keeping the Lights On» (assets/f3.css, theme F3 «Гібрид»).
+   Fonts as in the dashboard and the talk: IBM Plex Sans (text) and STIX Two Text (headings, leads,
+   emphasis). Files are Google Fonts builds with Cyrillic + Latin subsets (fonts/plex, fonts/stix; SIL OFL). */
+@font-face { font-family:'IBM Plex Sans'; font-weight:400; font-style:normal; font-display:swap; src:url('/assets/fonts/plex/ibm-plex-sans-regular.woff2') format('woff2'); }
+@font-face { font-family:'IBM Plex Sans'; font-weight:400; font-style:italic; font-display:swap; src:url('/assets/fonts/plex/ibm-plex-sans-italic.woff2') format('woff2'); }
+@font-face { font-family:'IBM Plex Sans'; font-weight:600; font-style:normal; font-display:swap; src:url('/assets/fonts/plex/ibm-plex-sans-600.woff2') format('woff2'); }
+@font-face { font-family:'IBM Plex Sans'; font-weight:700; font-style:normal; font-display:swap; src:url('/assets/fonts/plex/ibm-plex-sans-700.woff2') format('woff2'); }
+@font-face { font-family:'STIX Two Text'; font-weight:400; font-style:normal; font-display:swap; src:url('/assets/fonts/stix/stix-two-text-regular.woff2') format('woff2'); }
+@font-face { font-family:'STIX Two Text'; font-weight:400; font-style:italic; font-display:swap; src:url('/assets/fonts/stix/stix-two-text-italic.woff2') format('woff2'); }
+@font-face { font-family:'STIX Two Text'; font-weight:600; font-style:normal; font-display:swap; src:url('/assets/fonts/stix/stix-two-text-600.woff2') format('woff2'); }
+@font-face { font-family:'STIX Two Text'; font-weight:700; font-style:normal; font-display:swap; src:url('/assets/fonts/stix/stix-two-text-700.woff2') format('woff2'); }
+@font-face { font-family:'JetBrains Mono'; src:url('/assets/fonts/JetBrainsMono.ttf') format('truetype'); font-weight:100 800; font-display:swap; }
+
+/* Акцент (--primary) — синій із логотипа автора #174690 (історія 025). */
+:root {
+  --primary:#174690; --secondary:#e07b00; --accent:#c0392b; --ok:#2b9348;
+  --band:#e1e7f3; --shade:#f3f4f6; --ink:#262626; --ink2:#5f5f5f; --grid:#ebebeb; --axis:#8c8c8c;
+  --font:'IBM Plex Sans',Arial,sans-serif; --serif:'STIX Two Text',Georgia,serif;
+  --mono:'JetBrains Mono',Consolas,monospace; --nav-w:264px; --top-h:56px;
+}
+*, *::before, *::after { border-radius:0 !important; box-shadow:none !important; }
+html, body { background:#fff; color:var(--ink); font-family:var(--font); font-size:14px; line-height:1.45; }
+.q-layout, .q-page-container, .nicegui-content { background:#fff; }
+.nicegui-content { padding:0; }
+
+/* верхня панель */
+.topbar { background:#fff !important; color:var(--ink) !important; border-bottom:1px solid var(--grid); height:var(--top-h);
+  padding:0 24px; display:flex; align-items:center; justify-content:space-between; gap:16px; }
+.brand-box { display:flex; align-items:center; gap:10px; min-width:0; }
+.brand-ico { color:var(--primary); width:1.6em; height:1.6em; }
+.brand { font-weight:700; font-size:1.15em; letter-spacing:.01em; color:var(--ink); white-space:nowrap; }
+.brand-sub { color:var(--ink2); font-size:.9em; font-family:var(--serif); font-style:italic; white-space:nowrap; }
+.header-right { display:flex; align-items:center; gap:10px; min-width:0; }
+.badge { display:inline-flex; align-items:center; gap:6px; font-size:.82em; padding:3px 10px; border:1px solid var(--grid);
+  color:var(--ink2); white-space:nowrap; max-width:42vw; overflow:hidden; text-overflow:ellipsis; }
+.badge .ico { color:var(--ink2); }
+.badge.project { border-color:var(--primary); color:var(--primary); font-weight:600; }
+.badge.project .ico { color:var(--primary); }
+
+/* ліва навігація — як у дашборді автора: суцільний список на всю ширину, без рамок і проміжків;
+   групи відокремлено підписом і тонкою лінією, поточний пункт — сіре тло, синій жирний текст і смуга зліва */
+.nav { background:#fff !important; border-right:1px solid var(--grid); padding:4px 0 20px; top:0 !important; }
+.nav .q-drawer__content, .nav .nicegui-drawer { justify-content:flex-start !important; }
+.nav, .nav .q-drawer__content, .nav .nicegui-drawer { gap:0 !important; row-gap:0 !important; }
+.nav-group { font-size:.78em; font-weight:600; color:var(--ink2); padding:14px 16px 6px; margin:0; border-top:1px solid var(--grid); }
+.nav-group:first-child { border-top:none; padding-top:2px; }
+.nav-link { display:flex; align-items:center; gap:10px; width:100%; padding:8px 16px 8px 13px; margin:0; cursor:pointer;
+  border-left:3px solid transparent; color:var(--ink); font-size:.95em; }
+.nav-link:hover { background:var(--shade); }
+.nav-link .ico { color:var(--ink2); }
+.nav-link .label { flex:1; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.nav-link.current { background:var(--shade); color:var(--primary); font-weight:600; border-left-color:var(--primary); }
+.nav-link.current .ico { color:var(--primary); }
+/* Кількість активних проєктів праворуч у пункті «Проєкти» (історія 039). */
+.nav-count { margin-left:auto; min-width:1.8em; padding:0 6px; border:1px solid var(--grid); color:var(--ink2);
+  font-size:.82em; font-weight:600; line-height:1.6; text-align:center; font-variant-numeric:tabular-nums; }
+.nav-link.current .nav-count { border-color:var(--primary); color:var(--primary); }
+.stages { padding:0; }
+.nav-item { display:flex; align-items:center; gap:8px; padding:3px 16px; font-size:.82em; color:var(--axis); }
+.nav-item .ico { color:var(--axis); width:1em; height:1em; }
+.nav-item .num { width:1.5em; font-variant-numeric:tabular-nums; }
+.nav-item.done { color:var(--ink); } .nav-item.done .ico { color:var(--ok); }
+.nav .nav-link, .nav .nav-group, .nav .stages { align-self:stretch; }
+.icon-btn { display:inline-flex; align-items:center; justify-content:center; width:28px; height:28px; color:var(--primary); cursor:pointer;
+  border:1px solid transparent; }
+.icon-btn:hover { border-color:var(--primary); }
+.brand-link { display:flex; align-items:center; gap:10px; cursor:pointer; }
+
+/* основна область */
+.page { width:100%; max-width:1180px; padding:24px 32px 60px; gap:0; }
+.page-header { margin-bottom:18px; max-width:1000px; }
+.kicker { display:flex; align-items:center; gap:8px; font-size:.88em; font-weight:600; color:var(--ink2); }
+.kicker .ico { width:1.4em; height:1.4em; color:var(--primary); }
+.page-title { font-family:var(--serif); font-size:2em; font-weight:700; line-height:1.2; margin:6px 0 8px; color:var(--ink);
+  overflow-wrap:anywhere; }
+.lead { font-family:var(--serif); font-size:1.12em; line-height:1.5; color:var(--ink2); margin:0; white-space:pre-wrap; overflow-wrap:anywhere; }
+.section-title { font-family:var(--serif); font-size:1.3em; font-weight:700; margin:30px 0 4px; color:var(--ink); }
+.section-bar { display:flex; align-items:flex-end; justify-content:space-between; gap:16px; width:100%; margin-bottom:8px; }
+.section-bar .section-title { margin-bottom:0; }
+.dialog-actions { display:flex; justify-content:flex-end; gap:8px; width:100%; }
+.nav-link:focus, .btn:focus { outline:none; } .btn:focus-visible, .nav-link:focus-visible { outline:2px solid var(--primary); outline-offset:1px; }
+.section-lead { color:var(--ink2); margin:0 0 10px; }
+
+/* KPI — число над тонкою лінією, без плашок */
+.grid { display:grid; gap:22px; width:100%; margin:6px 0 8px; }
+.grid-3 { grid-template-columns:repeat(3,minmax(0,1fr)); }
+.grid-4 { grid-template-columns:repeat(4,minmax(0,1fr)); }
+.kpi { border-top:1px solid var(--axis); padding:10px 0 0; min-width:0; }
+.kpi-label { display:flex; align-items:center; gap:6px; font-size:.86em; font-weight:600; color:var(--ink2); }
+.kpi-label .ico { color:var(--primary); }
+.kpi-value { font-size:1.55em; font-weight:700; line-height:1.15; margin-top:4px; font-variant-numeric:tabular-nums;
+  overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.kpi-value.accent { color:var(--primary); }
+.kpi-sub { font-size:.8em; color:var(--ink2); margin-top:2px; }
+.mono { font-family:var(--mono); font-size:.92em; }
+
+/* таблиця проєктів і журнал */
+.trows { width:100%; border-top:1px solid var(--axis); }
+.trow-head, .trow { display:grid; grid-template-columns:minmax(0,2.2fr) minmax(0,3fr) 110px 120px; gap:16px; align-items:center;
+  padding:9px 4px; border-bottom:1px solid var(--grid); }
+.trow-head { font-size:.82em; font-weight:600; color:var(--ink2); }
+.trow:hover { background:var(--shade); }
+.trow.current { background:var(--band); }
+.trow .name { display:flex; align-items:center; gap:8px; font-weight:600; min-width:0; }
+.trow .name > :last-child { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.trow .name .ico { color:var(--primary); }
+.trow .purpose { color:var(--ink2); overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.trow .date { color:var(--ink2); font-variant-numeric:tabular-nums; }
+.log .trow { grid-template-columns:28px minmax(0,1fr) 180px; }
+.projects .trow-head, .projects .trow { grid-template-columns:minmax(0,2fr) 150px minmax(0,2.4fr) 100px 110px; }
+.trow .kind { display:flex; align-items:center; gap:6px; color:var(--ink2); }
+.trow .kind .ico { color:var(--primary); }
+.log .trow .ico { color:var(--ok); }
+.log .trow .ico.ico-when { color:var(--primary); }
+
+/* кнопки */
+.btn { display:inline-flex; align-items:center; gap:6px; padding:4px 14px; font:inherit; font-size:.9em; border:1px solid var(--grid);
+  background:#fff; color:var(--ink); cursor:pointer; white-space:nowrap; }
+.btn:hover { border-color:var(--primary); color:var(--primary); }
+.btn.primary { background:var(--primary); border-color:var(--primary); color:#fff; }
+.btn.primary:hover { background:#123a78; color:#fff; }
+.btn.ghost { border-color:transparent; color:var(--ink2); }
+.btn.small { font-size:.82em; padding:2px 12px; justify-self:end; }
+.q-btn { text-transform:none; font-weight:600; }
+
+/* «Як працювати» — як howto у дашборді: тонкі лінії згори й знизу */
+.howto { border-top:1px solid var(--grid); border-bottom:1px solid var(--grid); padding:4px 0; margin:4px 0 18px; max-width:1000px; }
+.howto summary { cursor:pointer; display:flex; align-items:center; gap:8px; font-weight:600; color:var(--ink); padding:6px 0; }
+.howto summary .ico { color:var(--primary); }
+.howto ol { margin:4px 0 10px; padding-left:1.4em; color:var(--ink2); } .howto li { margin-bottom:4px; }
+
+/* маршрут проєкту */
+.steps { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:16px; width:100%; }
+.step { border-top:1px solid var(--grid); padding-top:8px; color:var(--ink2); font-size:.9em; }
+.step .t { display:flex; align-items:center; gap:6px; font-weight:600; color:var(--ink); }
+.step .t .ico { color:var(--ink2); }
+.step.done .t .ico { color:var(--ok); }
+
+/* діалог і повідомлення */
+.create-dialog { width:min(560px,calc(100vw - 32px)); background:#fff; padding:22px 24px; gap:14px; border-top:3px solid var(--primary); }
+.dialog-title { display:flex; align-items:center; gap:8px; font-family:var(--serif); font-size:1.35em; font-weight:700; }
+.dialog-title .ico { color:var(--primary); }
+.q-field--outlined .q-field__control:before { border-color:var(--axis); }
+.error-message { color:var(--accent); font-size:.92em; display:flex; align-items:center; gap:6px; }
+.empty { border-top:1px solid var(--axis); border-bottom:1px solid var(--grid); padding:22px 4px; width:100%; color:var(--ink2); }
+.empty .t { font-family:var(--serif); font-size:1.2em; font-weight:700; color:var(--ink); margin-bottom:4px; }
+.footnote { margin-top:28px; font-size:.78em; color:var(--ink2); display:flex; align-items:center; gap:6px; }
+
+@media (max-width:1100px) { .grid-3, .grid-4, .steps { grid-template-columns:1fr; } .brand-sub { display:none; }
+  .trow-head { display:none; } .trow { grid-template-columns:minmax(0,1fr) auto; } .trow .purpose, .trow .date { display:none; }
+  .log .trow { grid-template-columns:28px minmax(0,1fr); } .log .trow .date { display:block; grid-column:2; }
+  .page { padding:18px 16px 40px; } }
+
+/* тонкий повзунок прокрутки в меню */
+.nav .q-scrollarea__thumb { width:4px; right:1px; opacity:.25; }
+@media (max-width:640px) { .topbar { height:auto; min-height:var(--top-h); padding:8px 12px; flex-wrap:nowrap; }
+  .badge:not(.project) { display:none; } .badge.project { max-width:46vw; } .page-title { font-size:1.6em; } }
+
+/* вибір типу проєкту — випадаючий список з іконками */
+.field-label { font-size:.86em; font-weight:600; color:var(--ink2); margin-bottom:-6px; }
+.type-trigger { display:flex; align-items:center; gap:10px; width:100%; padding:8px 12px; border:1px solid var(--axis); cursor:pointer; background:#fff; }
+.type-trigger:hover, .type-trigger:focus { border-color:var(--primary); outline:none; }
+.type-current { display:flex; align-items:center; gap:12px; flex:1; min-width:0; }
+.type-trigger .chevron { color:var(--ink2); }
+.type-ico { width:1.9em; height:1.9em; color:var(--primary); }
+.type-ico.big { width:2.6em; height:2.6em; }
+.type-text { display:flex; flex-direction:column; min-width:0; }
+.type-title { display:flex; align-items:center; gap:8px; font-weight:600; color:var(--ink); }
+.type-desc { font-size:.84em; color:var(--ink2); }
+.type-menu { border:1px solid var(--axis); }
+.type-option { display:flex; align-items:center; gap:12px; padding:10px 12px; border-bottom:1px solid var(--grid); min-height:56px; }
+.type-option.disabled .type-ico { color:var(--axis); }
+.q-item.disabled { opacity:.55 !important; }
+.tag { font-size:.72em; font-weight:600; color:var(--secondary); border:1px solid var(--secondary); padding:0 6px; line-height:1.5; }
+
+/* сторінка «Типи проєктів» */
+.seg { display:inline-flex; border:1px solid var(--axis); margin:6px 0 18px; }
+.seg-item { display:flex; align-items:center; gap:8px; padding:7px 14px; cursor:pointer; border-right:1px solid var(--grid); color:var(--ink2); }
+.seg-item:last-child { border-right:none; }
+.seg-item:hover { background:var(--shade); color:var(--ink); }
+.seg-item .ico { color:var(--primary); }
+.seg-item.current { background:var(--primary); color:#fff; font-weight:600; }
+.seg-item.current .ico { color:#fff; } .seg-item.current .tag { color:#fff; border-color:#fff; }
+.type-head { display:flex; align-items:center; gap:16px; width:100%; border-top:1px solid var(--axis); padding-top:12px; margin-bottom:10px; }
+.type-head .section-title.flush { margin:0; }
+.type-head .section-lead { margin:0; }
+.type-state { margin-left:auto; text-align:right; font-size:.86em; font-weight:600; }
+.type-state .muted { font-weight:400; color:var(--ink2); }
+.instruction-editor textarea { font-family:var(--mono); font-size:13px; line-height:1.55; min-height:420px; }
+.dialog-actions.left { justify-content:flex-start; margin-top:8px; }
+
+/* інструкція на сторінці проєкту */
+/* Markdown blocks use .md-text: Quasar's .md is a breakpoint class (display:none outside 1024–1439 px). */
+.instruction .md-text { font-size:.95em; color:var(--ink); max-width:900px; }
+.instruction .md-text h1 { font-family:var(--serif); font-size:1.3em; margin:8px 0; }
+.instruction .md-text h2 { font-family:var(--serif); font-size:1.1em; margin:14px 0 4px; }
+.instruction .md-text li { margin-bottom:3px; }
+
+/* бібліотека іконок */
+.icon-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(120px,1fr)); gap:10px; width:100%; }
+.icon-tile { display:flex; flex-direction:column; align-items:center; gap:8px; padding:14px 6px 10px; border:1px solid var(--grid); color:var(--ink); }
+.icon-tile .big { width:2.2em; height:2.2em; color:var(--primary); }
+.icon-tile .mono { font-size:.8em; color:var(--ink2); }
+@media (max-width:1100px) { .projects .trow { grid-template-columns:minmax(0,1fr) auto; } .trow .kind { display:none; } .type-state { display:none; } }
+
+/* етап 02: дані */
+.uploader { width:100%; max-width:720px; margin:4px 0 14px; border:1px dashed var(--axis) !important; }
+.uploader .q-uploader__header { background:var(--shade); color:var(--ink); }
+.uploader .q-uploader__title { font-weight:600; font-size:.95em; white-space:normal; }
+.uploader .q-uploader__list { min-height:0; padding:0; }
+.datasets .trow-head, .datasets .trow { grid-template-columns:minmax(0,2.4fr) 70px 150px 90px 110px 300px; }
+.columns .trow-head, .columns .trow { grid-template-columns:minmax(0,2.4fr) 100px 120px 90px repeat(3,minmax(0,1fr)); }
+.trow .num { text-align:right; font-variant-numeric:tabular-nums; }
+.columns .trow-head > :nth-child(n+4) { text-align:right; }
+.trow .num.warn { color:var(--accent); font-weight:600; }
+.btn.back { margin-bottom:10px; }
+/* Таблиця даних: AG Grid Community з NiceGUI (історія 037), компактна, сторінками (038); без заокруглень і тіней. */
+.data-grid { width:100%; height:620px;
+  --ag-font-family:var(--font); --ag-font-size:12.5px; --ag-foreground-color:var(--ink);
+  --ag-accent-color:var(--primary); --ag-border-color:var(--grid); --ag-border-radius:0;
+  --ag-wrapper-border-radius:0; --ag-header-background-color:var(--shade);
+  --ag-header-text-color:var(--ink); --ag-header-font-weight:600; --ag-row-hover-color:var(--band);
+  --ag-odd-row-background-color:#fff; --ag-selected-row-background-color:var(--band);
+  --ag-row-height:26px; --ag-header-height:30px; --ag-spacing:4px; --ag-cell-horizontal-padding:8px;
+  --ag-list-item-height:24px; }
+.data-grid .ag-cell.num { font-variant-numeric:tabular-nums; }
+.data-grid .ag-popup-child, .data-grid .ag-menu { box-shadow:none !important; border-radius:0 !important; }
+@media (max-width:1100px) { .datasets .trow, .columns .trow { grid-template-columns:minmax(0,1fr) auto; }
+  .datasets .trow > :nth-child(n+2):not(:last-child), .columns .trow > :nth-child(n+3) { display:none; } }
+
+/* етап 02b: метадані */
+.colname { display:flex; flex-direction:column; min-width:0; }
+.colname .hint { font-size:.8em; color:var(--ink2); overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.trow .role { color:var(--ink2); } .trow .role.target { color:var(--primary); font-weight:600; }
+.lead.small { font-size:1em; margin-bottom:8px; }
+.issues { display:flex; flex-direction:column; gap:4px; margin:4px 0 10px; width:100%; }
+.issue { display:flex; align-items:center; gap:8px; font-size:.9em; padding:4px 8px; border-left:3px solid var(--grid); }
+.issue.warning { border-left-color:var(--accent); color:var(--accent); }
+.issue.info { border-left-color:var(--primary); color:var(--ink2); }
+.source { border-top:1px solid var(--grid); padding:8px 0; }
+.source-text { white-space:pre-wrap; font-family:var(--mono); font-size:12px; color:var(--ink); max-height:240px; overflow:auto; }
+.meta-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px 14px; width:100%; }
+.meta-grid.three { grid-template-columns:repeat(3,minmax(0,1fr)); }
+.meta-grid .wide { grid-column:span 2; }
+.meta-grid .full { grid-column:1 / -1; }
+.meta-card { width:100%; border-top:1px solid var(--axis); padding:12px 0 16px; }
+.meta-head { display:flex; align-items:baseline; gap:12px; flex-wrap:wrap; margin-bottom:10px; }
+.meta-head .name { font-family:var(--mono); font-weight:600; font-size:1em; }
+.meta-head .facts { font-size:.84em; color:var(--axis); }
+.sticky-actions { position:sticky; bottom:0; background:#fff; border-top:1px solid var(--grid); padding:10px 0; z-index:5; }
+@media (max-width:1100px) { .meta-grid, .meta-grid.three { grid-template-columns:1fr; } .meta-grid .wide { grid-column:auto; }
+  .columns .trow > :nth-child(3) { display:none; } }
+
+/* макет: панель на всю висоту з логотипом, тонка смуга з контекстом праворуч */
+.brand-block { padding:28px 32px 24px; margin-bottom:6px; border-bottom:1px solid var(--grid); cursor:pointer; align-self:stretch; }
+.brand-logo { display:block; width:100%; max-width:125px; height:auto; margin:0 auto; }
+.brand-mini { display:none; width:34px; height:auto; margin:0 auto; }
+.brand-row { display:flex; align-items:center; gap:10px; }
+.brand-row .brand-ico { width:2.6em; height:2.6em; color:var(--primary); }
+.brand-words { display:flex; flex-direction:column; line-height:1; }
+.brand-data { font-weight:700; font-size:1.45em; letter-spacing:.02em; color:var(--ink); }
+.brand-story { font-weight:400; font-size:1.45em; letter-spacing:.02em; color:var(--primary); }
+.brand-tagline { margin-top:8px; font-size:.66em; font-weight:600; letter-spacing:.06em; text-transform:uppercase; color:var(--ink2); }
+.nav .brand-block + .nav-group { border-top:none; }
+.crumbs { display:flex; align-items:center; gap:6px; min-width:0; overflow:hidden; }
+.crumb { color:var(--ink2); cursor:pointer; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:280px; }
+.crumb:hover { color:var(--primary); }
+.crumb.here { color:var(--ink); font-weight:600; cursor:default; }
+.crumb-sep { color:var(--axis); width:.9em; height:.9em; }
+.topbar { height:48px; }
+.menu-btn { display:none; }
+@media (max-width:1023px) { .menu-btn { display:inline-flex; } }
+
+/* згорнуте меню (Quasar mini): лише знак та іконки пунктів */
+.q-drawer--mini .brand-logo, .q-drawer--mini .brand-tagline, .q-drawer--mini .brand-row { display:none !important; }
+.q-drawer--mini .brand-mini { display:block; }
+.q-drawer--mini .brand-block { padding:16px 10px 14px; }
+.q-drawer--mini .nav-group, .q-drawer--mini .stages, .q-drawer--mini .nav-link .label,
+.q-drawer--mini .nav-count { display:none; }
+.q-drawer--mini .nav-link { justify-content:center; padding:10px 0; }
+.q-drawer--mini .nav-link .ico { width:1.3em; height:1.3em; }
+.nav-link.nav-toggle { margin-top:auto; border-top:1px solid var(--grid); color:var(--ink2); font-weight:400; }
+.nav-link.nav-toggle .ico { color:var(--ink2); }
+.q-drawer--mini .collapse-ico { transform:rotate(180deg); }
+.nav .q-drawer__content { display:flex; flex-direction:column; }
+@media (max-width:1023px) { .nav-link.nav-toggle { display:none; } }
+
+
+/* Local Markdown editor: thin lines, existing typography and no card styling. */
+.markdown-editor { min-width:0; }
+.markdown-tools { display:flex; flex-wrap:wrap; gap:0; border-top:1px solid var(--grid); border-bottom:1px solid var(--grid); padding:4px 0; }
+.markdown-tools .btn { padding:6px 10px; border:0; border-radius:0; font-size:.87em; }
+.markdown-tools .btn[aria-pressed="true"] { color:var(--primary); background:var(--shade); }
+.markdown-tools button:focus-visible, .markdown-help summary:focus-visible { outline:2px solid var(--primary); outline-offset:2px; }
+.markdown-help { padding:10px 0; color:var(--ink2); font-size:.9em; }
+.markdown-help summary { cursor:pointer; color:var(--primary); }
+.markdown-help p { margin:10px 0; }
+.markdown-help dl { display:grid; grid-template-columns:150px 1fr; gap:6px 16px; }
+.markdown-help dt { color:var(--ink); font-weight:600; }
+.markdown-help dd { margin:0; }
+.markdown-editor .toastui-editor-defaultUI { border:0; border-top:1px solid var(--grid); border-bottom:1px solid var(--grid); border-radius:0; font-family:var(--font); }
+.markdown-editor .toastui-editor-defaultUI-toolbar, .markdown-editor .toastui-editor-mode-switch { display:none; }
+.markdown-editor .toastui-editor-md-preview { display:none; }
+.markdown-editor .toastui-editor-md-splitter { display:none; }
+.markdown-editor.show-preview .toastui-editor-md-preview { display:block; }
+.markdown-editor.show-preview .toastui-editor-md-splitter { display:block; background:var(--grid); }
+.markdown-editor .toastui-editor-contents, .markdown-editor .toastui-editor { font-family:var(--font); font-size:15px; color:var(--ink); }
+.markdown-editor .toastui-editor-md-container .ProseMirror { padding:16px 12px; }
+.markdown-editor .toastui-editor-contents h1, .markdown-editor .toastui-editor-contents h2, .markdown-editor .toastui-editor-contents h3 { font-family:var(--serif); }
+.markdown-status { padding:8px 0; color:var(--ink2); font-size:.82em; }
+@media (max-width:700px) {
+  .markdown-editor.show-preview .toastui-editor-md-container { flex-direction:column; }
+  .markdown-help dl { grid-template-columns:1fr; gap:4px; }
+  .markdown-help dd { margin-bottom:6px; }
+  .markdown-tools .btn { padding:7px 8px; }
+}
+
+.markdown-editor:not(.show-preview) .toastui-editor-md-vertical-style .toastui-editor { width:100%; }
+@media (max-width:700px) {
+  .markdown-editor.show-preview .toastui-editor-md-vertical-style .toastui-editor,
+  .markdown-editor.show-preview .toastui-editor-md-vertical-style .toastui-editor-md-preview { width:100%; height:50%; }
+  .markdown-editor.show-preview .toastui-editor-md-splitter { display:none; }
+}
+
+@media (max-width:700px) {
+  .seg { flex-wrap:wrap; max-width:100%; }
+  .seg-item { flex:1 1 150px; }
+  .type-head { flex-wrap:wrap; }
+  .type-head .type-state { margin-left:0; }
+  .dialog-actions.left { flex-wrap:wrap; }
+}
+
+.markdown-editor:not(.show-preview) .toastui-editor-main .toastui-editor-md-splitter { display:none; }
+
+/* Markdown source: uniform size with syntax emphasis; preview is separate. */
+.markdown-editor { border:1px solid var(--grid); }
+.markdown-tools { border-top:0; padding:4px; }
+.markdown-tools .btn { position:relative; width:36px; height:36px; padding:6px; justify-content:center; }
+.markdown-tools .ico { width:24px; height:24px; }
+.markdown-tools .btn:nth-child(7), .markdown-tools .btn:last-child { margin-left:8px; border-left:1px solid var(--grid); }
+.markdown-tooltip { display:none; position:absolute; top:100%; left:0; z-index:20; width:max-content; max-width:240px; padding:7px 10px; background:var(--ink); color:white; font-family:var(--font); font-size:12px; font-weight:400; line-height:1.4; text-align:left; pointer-events:none; }
+.markdown-tools .btn:hover .markdown-tooltip, .markdown-tools .btn:focus-visible .markdown-tooltip { display:block; }
+.markdown-tools .btn:last-child .markdown-tooltip { left:auto; right:0; }
+.markdown-help { padding:10px 12px; }
+.markdown-status { padding:8px 12px; }
+.markdown-editor .toastui-editor-md-container .ProseMirror,
+.markdown-editor .toastui-editor-md-container .ProseMirror * {
+  font-family:var(--mono); font-size:14px;
+  line-height:1.65; letter-spacing:normal;
+}
+.markdown-editor .toastui-editor-md-container .ProseMirror { color:var(--ink); }
+/* The empty upstream toolbar wrapper still reserves 46px unless hidden too. */
+.markdown-editor .toastui-editor-defaultUI > .toastui-editor-toolbar { display:none; }
+.markdown-editor .ProseMirror .toastui-editor-md-delimiter,
+.markdown-editor .ProseMirror .toastui-editor-md-meta,
+.markdown-editor .ProseMirror .toastui-editor-md-table,
+.markdown-editor .ProseMirror .toastui-editor-md-thematic-break { color:var(--ink2); }
+.markdown-editor .ProseMirror .toastui-editor-md-heading,
+.markdown-editor .ProseMirror .toastui-editor-md-link,
+.markdown-editor .ProseMirror .toastui-editor-md-list-item-style,
+.markdown-editor .ProseMirror .toastui-editor-md-code.toastui-editor-md-marked-text { color:var(--primary); }
+.markdown-editor .ProseMirror .toastui-editor-md-code { background:var(--shade); border-radius:0; }
+
+/* Етап 02c: копія наявного набору (історія 040). */
+.tag { margin-left:8px; padding:0 6px; border:1px solid var(--grid); color:var(--ink2); font-size:.78em; font-weight:400; }
+.copy-dialog { width:min(720px, 94vw); max-width:94vw; }
+.candidates .trow { display:flex; align-items:center; justify-content:space-between; gap:12px; padding:8px 0; }
+.candidates .trow .colname { min-width:0; }
+
+/* Етап 03: таблиці в чинному стилі дашборда; прокрутка лише всередині таблиці. */
+.stat-controls { display:flex; align-items:center; flex-wrap:wrap; gap:10px; width:100%; }
+.stat-dataset { width:min(420px,100%); }
+.stat-fields { width:min(700px,100%); }
+.stat-views .btn[aria-pressed="true"] { border-color:var(--primary); color:var(--primary); background:var(--shade); }
+.btn:disabled { opacity:.45; cursor:default; }
+.btn:focus-visible { outline:2px solid var(--primary); outline-offset:2px; }
+.stat-context, .stat-summary { font-weight:600; }
+.stat-table-wrap { width:100%; max-width:100%; overflow-x:auto; border-top:1px solid var(--grid); }
+.stat-table { width:100%; border-collapse:collapse; font-size:13px; }
+.stat-table caption { text-align:left; font-size:16px; font-weight:600; padding:10px 0; }
+.stat-table th, .stat-table td { padding:8px; border-bottom:1px solid var(--grid); vertical-align:top; }
+.stat-table thead th { color:var(--ink2); font-weight:600; text-align:right; white-space:nowrap; }
+.stat-table th:first-child { text-align:left; min-width:155px; }
+.stat-table tbody th { font-weight:400; }
+.stat-table td { text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap; }
+.stat-table .hint { color:var(--axis); font-size:12px; white-space:normal; }
+.stat-table .target { color:var(--primary); font-weight:600; }
+.stat-table .stat-name { font-weight:600; }
+.stat-table .stat-notes { text-align:left; min-width:180px; max-width:330px; white-space:normal; }
+.stat-table tbody tr:hover { background:var(--shade); }
+.stat-correlation { border:0; padding:0; width:100%; justify-content:flex-end; background:transparent; font-size:13px; font-weight:400; }
+.stat-pair { color:var(--ink2); font-size:14px; }
+.stat-pager { padding:8px 0; font-size:13px; }
+.stat-audit { margin-left:28px; overflow-wrap:anywhere; }
+@media (max-width:700px) { .stat-views .btn { flex:1 1 150px; } .stat-table { font-size:13px; } }
+/* Analysis blocks of the current project (D-62, D-63) */
+.block-link .block-num { width:1.4em; text-align:right; font-size:.82em; color:var(--ink2); }
+.block-link.planned { cursor:default; color:var(--axis); font-style:italic; }
+.block-link.planned:hover { background:transparent; }
+.block-link.planned .ico { color:var(--axis); }
+.eda-tools { margin:4px 0 12px; flex-wrap:wrap; max-width:100%; }
+.q-drawer--mini .block-num { display:none; }
+
+/* Controls of the explicit regression preparation workflow. */
+.training-controls > .q-field { flex:1 1 280px; min-width:0; max-width:420px; }
+@media (max-width:700px) { .training-controls > .q-field { flex-basis:100%; max-width:100%; } }
+
+/* Model block (stage 06): panels in 2–3 columns on wide screens, one column on narrow ones. */
+.model-grid { display:grid; gap:18px 28px; width:100%; margin:14px 0; align-items:start; }
+.model-top { grid-template-columns:minmax(0,3fr) minmax(0,2fr); }
+.model-grid-main { grid-template-columns:minmax(0,3fr) minmax(0,2fr); }
+.model-grid-three { grid-template-columns:repeat(3,minmax(0,1fr)); }
+.price-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px 12px; margin:4px 0 12px; }
+.model-panel { border-top:2px solid var(--primary); padding-top:8px; min-width:0; }
+.model-panel .panel-title { font-family:var(--serif); font-size:1.15em; font-weight:700; margin:0 0 6px; }
+.model-select { width:100%; }
+.model-kpis { margin-top:12px; }
+.model-explain { margin:2px 0 6px; }
+.model-warning { border-left:3px solid var(--secondary); padding:4px 10px; margin:6px 0; }
+.model-note { color:var(--ink2); font-size:.88em; margin:4px 0; }
+.mono-wrap { overflow-wrap:anywhere; }
+.model-limits { list-style:disc; color:var(--ink2); padding-left:1.2em; margin:0; font-size:.92em; }
+.model-limits li { margin-bottom:5px; }
+.coefs .trow-head, .coefs .trow { grid-template-columns:minmax(0,1.6fr) repeat(4,minmax(0,1fr)) 36px; gap:10px; }
+.coefs .trow .name { font-weight:500; overflow-wrap:anywhere; white-space:normal; }
+.coefs .trow-head .num { text-align:right; }
+.coefs .stars { font-family:var(--mono); font-weight:700; color:var(--primary); }
+@media (max-width:1100px) {
+  .model-top, .model-grid-main, .model-grid-three { grid-template-columns:1fr; }
+  .coefs .trow-head { display:grid; }
+  .coefs .trow-head, .coefs .trow { grid-template-columns:minmax(0,1.4fr) minmax(0,1fr) minmax(0,1fr) 30px; }
+  .coefs .se, .coefs .tval { display:none; }
+  .model-kpis { grid-template-columns:repeat(2,minmax(0,1fr)); }
+}
+/* Model check block (066): one chart with its equation, reading notes beside it. */
+.diagnostic-wrap { width:100%; }
+.diagnostic-wrap svg { width:100%; height:auto; display:block; }
+.model-equation { overflow-x:auto; max-width:100%; }
+.equation-title { margin-top:12px; }
+.q-toggle .q-btn { border-radius:0; }
+/* Knowledge base (07): search hits with source. */
+.knowledge-hit { border-left:3px solid var(--primary); padding:4px 10px; margin:8px 0; }
+.knowledge-section { font-weight:600; }
+/* AI models page (08): stage panels with one model per task; inert key field. */
+.ai-task { padding:6px 0 10px; border-bottom:1px solid var(--grid); }
+.ai-task:last-child { border-bottom:none; }
+.fake-key { display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin-top:6px; }
+.fake-key input { flex:1 1 200px; min-width:0; border:1px solid var(--axis); padding:6px 8px; font:inherit; }
+.fake-key .model-note { flex-basis:100%; }
+/* AI assistant (09): quiet corner button, side panel only on demand. */
+.assistant-fab { position:fixed; right:20px; bottom:20px; z-index:2000; display:flex; align-items:center; gap:6px;
+  padding:8px 14px; background:#fff; color:var(--primary); border:1px solid var(--primary); font:inherit; font-weight:600; cursor:pointer; }
+.assistant-fab:hover, .assistant-fab:focus-visible { background:var(--primary); color:#fff; outline:none; }
+.assistant-fab .ico { color:inherit; }
+.assistant-drawer { background:#fff !important; padding:16px 18px !important; gap:10px !important; }
+.assistant-head { display:flex; align-items:center; gap:8px; width:100%; }
+.assistant-head .ico { color:var(--primary); }
+.assistant-head .panel-title { margin:0; flex:1; }
+.assistant-close { border:none; background:none; font-size:1.5em; line-height:1; cursor:pointer; color:var(--ink2); }
+.assistant-chips { display:flex; flex-wrap:wrap; gap:6px; }
+.assistant-chip { border:1px solid var(--grid); background:var(--shade); padding:4px 8px; font:inherit; font-size:.86em; cursor:pointer; text-align:left; }
+.assistant-chip:hover { border-color:var(--primary); color:var(--primary); }
+.assistant-answer { border-left:3px solid var(--primary); padding-left:10px; }
+@media (max-width:600px) { .assistant-fab { right:12px; bottom:12px; } }
+.assistant-modes { border:1px solid var(--grid); }
+.assistant-modes .q-btn { padding:4px 10px; }
+.assistant-thread { gap:8px !important; }
+.assistant-msg { padding:6px 10px; max-width:100%; }
+.assistant-msg.user { background:var(--shade); align-self:flex-end; }
+.assistant-msg.assistant { border-left:3px solid var(--primary); }
+.assistant-chip.answer { border-color:var(--primary); background:#fff; color:var(--primary); }
+.assistant-where { font-style:italic; }
+.ai-shortcut { color:var(--primary); border-color:transparent; margin:2px 0 6px; }
+.ai-shortcut:hover { border-color:var(--primary); }
+.ai-shortcut .ico { color:var(--primary); }
+/* D-83: the open assistant must read as a separate tool, not part of the page — the only
+   deliberate exception to the no-shadow dashboard style (D-19). */
+.q-drawer--right:has(.assistant-drawer) { box-shadow:-28px 0 64px rgba(23,70,144,.22), -2px 0 0 var(--primary) !important; }
+.assistant-drawer { border-top:4px solid var(--primary); }
+.assistant-head { background:var(--band); padding:10px 12px; box-sizing:border-box; }
+.assistant-drawer > * { max-width:100%; box-sizing:border-box; }
+.assistant-msg { overflow-wrap:anywhere; box-sizing:border-box; }
+/* Monitoring (08b): one panel per part, state colour on the top line. */
+.monitor-state { display:flex; align-items:center; gap:6px; font-weight:600; margin:2px 0 4px; }
+.monitor-ok { border-top-color:var(--ok); } .monitor-ok .monitor-state { color:var(--ok); }
+.monitor-warning { border-top-color:var(--secondary); } .monitor-warning .monitor-state { color:var(--secondary); }
+.monitor-error { border-top-color:var(--accent); } .monitor-error .monitor-state { color:var(--accent); }
+.monitor-not_configured, .monitor-not_implemented { border-top-color:var(--axis); }
+.monitor-not_configured .monitor-state, .monitor-not_implemented .monitor-state { color:var(--ink2); }
+.monitor-grid { grid-auto-rows:auto; }
+/* Knowledge editor (081): editing happens in a wide dialog with the Markdown editor. */
+.knowledge-dialog { border-radius:0 !important; box-shadow:none; border-top:4px solid var(--primary); padding:16px 20px; }
+.knowledge-editor { width:min(960px, 96vw); max-width:96vw !important; }
+.knowledge-doc .md-text h2 { font-size:1.05em; margin:10px 0 4px; }
+.knowledge-doc .md-text h1 { font-size:1.15em; }
+
+/* Local instruction tree, adapted from the lecture chart chooser. */
+.guide-tree {display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;width:100%;padding:12px 0;}
+.guide-card {border:1px solid var(--border,#ddd);border-left:3px solid #1B4F8A;padding:14px;gap:6px;background:#fff;}
+
+/* Report block (stage 10): report + new draft side by side, editor, then preview + versions. */
+.report-actions { flex-wrap:wrap; gap:8px; margin-top:10px; }
+.report-status { margin:4px 0; }
+.report-editor { width:100%; margin:6px 0 4px; }
+.report-frame { width:100%; height:820px; border:1px solid var(--grid); background:#fff; }
+.report-version { border-bottom:1px solid var(--grid); padding:8px 0; }
+.report-version-title { font-weight:600; }
+.report-files { flex-wrap:wrap; gap:6px; margin-top:6px; }
+.report-files a.btn { text-decoration:none; }
+.report-figure { width:100%; max-width:520px; margin:4px 0 12px; }
+@media (max-width:700px) { .report-frame { height:560px; } }
+
+/* Joins and summaries (DuckDB): step controls and a compact result table. */
+.combine-field { flex:1 1 220px; min-width:0; max-width:360px; }
+.combine-op { flex:0 1 200px; min-width:0; }
+.combine-table { width:100%; overflow-x:auto; border-top:1px solid var(--axis); }
+.combine-table table { border-collapse:collapse; width:100%; font-size:.9em; }
+.combine-table th { text-align:left; font-weight:600; color:var(--ink2); padding:6px 8px; border-bottom:1px solid var(--grid); white-space:nowrap; }
+.combine-table td { padding:5px 8px; border-bottom:1px solid var(--grid); font-variant-numeric:tabular-nums; white-space:nowrap; }
+@media (max-width:700px) { .combine-field, .combine-op { flex-basis:100%; max-width:100%; } }
+.combine-result { width:100%; }
+.combine-table td { text-align:left; }
+
+/* Індикатор довгої дії (історія 096): рухома смужка в кольорі акценту, текст і секунди. */
+.progress-line { width:100%; margin:8px 0; }
+.progress-bar { position:relative; height:3px; background:var(--grid, #ebebeb); overflow:hidden; }
+.progress-bar::after { content:""; position:absolute; top:0; left:-35%; width:35%; height:100%;
+  background:var(--primary); animation:progress-slide 1.2s ease-in-out infinite; }
+@keyframes progress-slide { from { left:-35%; } to { left:100%; } }
+.progress-text { gap:10px; align-items:baseline; margin-top:6px; color:var(--ink); }
+.progress-time { color:var(--ink2); font-variant-numeric:tabular-nums; font-size:.88em; }
+@media (prefers-reduced-motion: reduce) {
+  .progress-bar::after { animation:none; left:0; width:100%; opacity:.5; }
+}
+
+/* 097 — інтерактивні елементи мають бути помітні (коментарі автора 1, 2, 6, 10). */
+/* 6: звичайні кнопки — світло-синій фон палітри замість білого. */
+.btn { background:var(--band); border-color:#c5d1e6; color:var(--primary); }
+.btn:hover { background:#d2dcee; border-color:var(--primary); color:var(--primary); }
+.btn.ghost { background:transparent; border-color:transparent; }
+.markdown-tools .btn { background:transparent; color:var(--ink); }
+.markdown-tools .btn:hover { background:var(--shade); color:var(--primary); }
+.stat-views .btn[aria-pressed="true"] { background:var(--primary); border-color:var(--primary); color:#fff; }
+/* 1: шапка акордеона — тонка крапкова рамка й легкий фон, стрілка в кольорі акценту. */
+.q-expansion-item > .q-expansion-item__container > .q-item {
+  border:1px dotted var(--axis); background:var(--shade); min-height:36px; padding:4px 10px; }
+.q-expansion-item > .q-expansion-item__container > .q-item:hover { border-color:var(--primary); }
+.q-expansion-item--expanded > .q-expansion-item__container > .q-item { border-style:solid; border-color:var(--grid); }
+.q-expansion-item .q-expansion-item__toggle-icon { color:var(--primary); }
+.q-expansion-item { margin:4px 0; }
+/* 2: перемикачі-вкладки — рамка групи, світлий фон невибраних, роздільники, акцент вибраної. */
+.q-btn-toggle { border:1px solid var(--primary) !important; }
+.q-btn-toggle .q-btn { border-right:1px solid #c5d1e6; }
+.q-btn-toggle .q-btn:last-child { border-right:0; }
+.q-btn-toggle .q-btn:not([aria-pressed="true"]) { background:var(--band) !important; color:var(--primary) !important; }
+.q-btn-toggle .q-btn:not([aria-pressed="true"]):hover { background:#d2dcee !important; }
+.q-tabs { border-bottom:2px solid var(--primary); }
+.q-tab { background:var(--band); color:var(--primary); margin-right:2px; text-transform:none; }
+.q-tab--active { background:var(--primary); color:#fff; }
+.q-tab .q-tab__indicator { display:none; }
+/* 10: випадні списки — рамка, вибрані пункти з галочкою праворуч. */
+.q-menu { border:1px solid var(--axis); }
+.q-menu .q-item[aria-selected="true"] { background:var(--band); color:var(--primary); font-weight:600; }
+.q-menu .q-item[aria-selected="true"]::after { content:"✓"; margin-left:auto; padding-left:14px;
+  color:var(--primary); font-weight:700; align-self:center; }
+/* 4: пошук у базі знань — поле й кнопка в один рядок, однакова висота. */
+.search-row { display:flex; gap:8px; align-items:stretch; width:100%; }
+.search-row .q-field { flex:1 1 auto; }
+.search-row .btn { height:56px; padding:0 22px; flex:0 0 auto; }
+/* 14: службовий рядок відповіді помічника — дрібно й непомітно. */
+.assistant-sources { margin-top:-2px; }
+.assistant-meta { color:var(--axis); font-size:.78em; }
+/* 3: зразок кольору в полі HEX. */
+.color-field .q-field__prepend { padding-right:8px; }
+.color-swatch { width:22px; height:22px; border:1px solid var(--axis); }
+/* 9: компактний журнал дій. */
+.journal { width:100%; max-width:900px; font-size:.86em; }
+.journal-row { display:grid; grid-template-columns:120px minmax(0,1fr); gap:10px; padding:1px 0; color:var(--ink); }
+.journal-row .when { color:var(--ink2); font-variant-numeric:tabular-nums; }
+.journal-row.error { color:var(--accent); }
+/* 7: кнопки оглядового аналізу біля набору. */
+.dataset-actions { display:flex; gap:6px; justify-content:flex-end; flex-wrap:wrap; }
+/* 13: попередній перегляд звіту як суцільний аркуш A4 у діалозі. */
+.a4-wrap { width:min(230mm, 96vw); max-width:none !important; max-height:94vh; display:flex; flex-direction:column;
+  background:#e9ecf1; padding:0; }
+.a4-bar { display:flex; justify-content:space-between; align-items:center; gap:12px; padding:8px 14px;
+  background:#fff; border-bottom:2px solid var(--primary); }
+.a4-title { font-weight:600; color:var(--ink2); font-size:.9em; }
+.a4-sheet { overflow:auto; background:#fff; margin:10px auto; width:210mm; max-width:calc(100% - 20px);
+  box-sizing:border-box; padding:18mm 18mm 24mm; border:1px solid var(--grid); font-size:15px; line-height:1.55; }
+.a4-heading { font-family:var(--serif); font-size:2em; font-weight:700; line-height:1.2; margin-bottom:12px; }
+.a4-body h2 { font-family:var(--serif); font-size:1.4em; border-top:2px solid var(--primary); padding-top:8px; margin:30px 0 8px; }
+.a4-body h3 { font-family:var(--serif); font-size:1.15em; margin:20px 0 6px; }
+.a4-body table { border-collapse:collapse; width:100%; font-size:.92em; margin:10px 0 16px; border-top:1px solid var(--axis); }
+.a4-body th { text-align:left; color:var(--ink2); font-weight:600; padding:6px; border-bottom:1px solid var(--grid); }
+.a4-body td { padding:6px; border-bottom:1px solid var(--grid); font-variant-numeric:tabular-nums; }
+.a4-body img { display:block; max-width:100%; margin:16px auto 4px; }
+.a4-body .a4-math { overflow-x:auto; margin:10px 0; }
+@media (max-width:700px) { .a4-sheet { padding:16px; } }
+.a4-body h2, .a4-body h3 { font-weight:700; }
+.a4-body ul, .a4-body ol { padding-left:1.4em; margin:6px 0 12px; }
+.a4-body ul { list-style:disc; } .a4-body ol { list-style:decimal; }
+.a4-body li { margin-bottom:3px; } .a4-body li::marker { color:var(--primary); }

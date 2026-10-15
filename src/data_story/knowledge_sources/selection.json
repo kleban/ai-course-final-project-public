@@ -1,0 +1,164 @@
+{
+  "version": 2,
+  "note": "Extraction ranges are candidates, not approval of whole chapters. Only exact passages in reviewed.json enter the corpus (review 099). PDFs, extracted text and vectors stay local outside Git.",
+  "books": [
+    {
+      "id": "ziller-introstats",
+      "file": "ziller-introstats-book.pdf",
+      "title": "Introduction to Statistics and Data Analysis – A Case-Based Approach",
+      "authors": "Conrad Ziller",
+      "year": 2024,
+      "why": "p-value, припущення OLS, незалежність і мінливість помилок.",
+      "ranges": [
+        [
+          7,
+          88,
+          "Univariate, bivariate statistics, inference, regression"
+        ]
+      ]
+    },
+    {
+      "id": "muller-guido-ml-python",
+      "file": "Introduction to Machine Learning with Python.pdf",
+      "title": "Introduction to Machine Learning with Python",
+      "authors": "Andreas C. Müller, Sarah Guido",
+      "year": 2016,
+      "why": "Лінійна регресія та однакова підготовка навчальної/тестової частин.",
+      "ranges": [
+        [
+          40,
+          42,
+          "Generalization, overfitting and underfitting"
+        ],
+        [
+          59,
+          70,
+          "Linear models for regression"
+        ],
+        [
+          146,
+          153,
+          "Preprocessing and scaling"
+        ],
+        [
+          226,
+          264,
+          "Representing data and engineering features"
+        ],
+        [
+          265,
+          288,
+          "Cross-validation and grid search"
+        ],
+        [
+          313,
+          318,
+          "Regression metrics and model evaluation summary"
+        ]
+      ]
+    },
+    {
+      "id": "zaki-meira-data-mining",
+      "file": "mohammed_j_zaki_wagner_meira_jr_data_mining_and_analysis_fun.pdf",
+      "title": "Data Mining and Analysis: Fundamental Concepts and Algorithms",
+      "authors": "Mohammed J. Zaki, Wagner Meira Jr.",
+      "year": 2014,
+      "why": "Типи числових і категоріальних ознак.",
+      "ranges": [
+        [
+          12,
+          20,
+          "Data matrix and attributes"
+        ],
+        [
+          46,
+          78,
+          "Numeric attributes"
+        ]
+      ]
+    },
+    {
+      "id": "tamal-ml-zero-advanced",
+      "file": "Machine_Learning_From_Zero_to_Advanced.pdf",
+      "title": "Machine Learning: From Zero to Advanced",
+      "authors": "Md. Tawfiqul Islam Tamal",
+      "year": 2025,
+      "why": "Короткий процес ML, регресія й регуляризація, оцінювання та вибір моделей.",
+      "ranges": [
+        [
+          9,
+          17,
+          "Foundations, workflow, regression"
+        ],
+        [
+          45,
+          46,
+          "Model evaluation and metrics"
+        ],
+        [
+          62,
+          63,
+          "Choosing and comparing models"
+        ]
+      ]
+    },
+    {
+      "id": "boularouk-data-analyst",
+      "file": "main 1.pdf",
+      "title": "The Data Analyst's Handbook",
+      "authors": "Saïd Boularouk",
+      "year": 2024,
+      "why": "Контекст, кореляція й причинність, прозорість висновків, підписи графіків і подання результатів.",
+      "ranges": [
+        [
+          39,
+          52,
+          "From data to decision"
+        ],
+        [
+          79,
+          128,
+          "Data collection, cleaning, aggregation and interpretation"
+        ],
+        [
+          129,
+          150,
+          "Visualization and communication"
+        ],
+        [
+          155,
+          166,
+          "Data analysis and AI, prediction models"
+        ]
+      ]
+    },
+    {
+      "id": "saunders-research-methods",
+      "file": "Saunders-Research-Methods-for-Business-Students-2023.pdf",
+      "title": "Research Methods for Business Students",
+      "authors": "Mark N. K. Saunders, Philip Lewis, Adrian Thornhill",
+      "year": 2023,
+      "why": "Описові показники, практична значущість, прозорість методу, структура й ясність звіту, посилання.",
+      "ranges": [
+        [
+          599,
+          663,
+          "Analysing data quantitatively"
+        ],
+        [
+          745,
+          762,
+          "Writing the report: structure, conclusions"
+        ],
+        [
+          770,
+          779,
+          "Practitioner reports, clarity and writing style"
+        ]
+      ]
+    }
+  ],
+  "skipped": "Класифікація, кластеризація, нейромережі, графи, частотні шаблони, якісний аналіз, філософія досліджень, етика й збір первинних даних — поза обсягом MVP (D-91). Ревю 099: сюжетні приклади, новини, вправи, сторонні алгоритми й пошкоджений PDF-текст виключено; неперевірені уривки не індексуються.",
+  "chunk_words": 220,
+  "overlap_words": 30
+}

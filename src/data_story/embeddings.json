@@ -1,0 +1,19 @@
+{
+  "model": "BAAI/bge-m3",
+  "license": "MIT",
+  "revision": "5617a9f61b028005a4858fdac845db406aefb181",
+  "download_base": "https://huggingface.co",
+  "installation": "runtime/dependencies/embeddings/bge-m3",
+  "files": {
+    "onnx/model.onnx": "f84251230831afb359ab26d9fd37d5936d4d9bb5d1d5410e66442f630f24435b",
+    "onnx/model.onnx_data": "1eebfb28493f67bba03ce0ef64bfdc7fc5a3bd9d7493f818bb1d78cd798416b4",
+    "onnx/Constant_7_attr__value": "cdf16f72c5d07b36484056e601ed9687f78477e5d85cee85a34f2406b7fb5906",
+    "onnx/tokenizer.json": "6710678b12670bc442b99edc952c4d996ae309a7020c1fa0096dd245c2faf790"
+  },
+  "output": "sentence_embedding",
+  "pooling": "cls",
+  "query_prefix": "",
+  "passage_prefix": "",
+  "max_tokens": 512,
+  "dimension": 1024
+}

@@ -1,0 +1,67 @@
+{
+  "source": "samples/melb_data.csv",
+  "sha256": "3e449c3e95088da8a3a6b10331a5703f2c951d0740f317f97ed9baf0db1fd9f8",
+  "method": "stdlib csv; blank cells; math.fsum; n-1 std; sorted linear quantiles; centered Pearson sums",
+  "rows": 13580,
+  "columns": 21,
+  "missing": {
+    "Suburb": 0,
+    "Address": 0,
+    "Rooms": 0,
+    "Type": 0,
+    "Price": 0,
+    "Method": 0,
+    "SellerG": 0,
+    "Date": 0,
+    "Distance": 0,
+    "Postcode": 0,
+    "Bedroom2": 0,
+    "Bathroom": 0,
+    "Car": 62,
+    "Landsize": 0,
+    "BuildingArea": 6450,
+    "YearBuilt": 5375,
+    "CouncilArea": 1369,
+    "Lattitude": 0,
+    "Longtitude": 0,
+    "Regionname": 0,
+    "Propertycount": 0
+  },
+  "rows_with_missing": 7384,
+  "descriptive": {
+    "Price": {
+      "count": 13580,
+      "mean": 1075684.079455081,
+      "std": 639310.724296018,
+      "min": 85000.0,
+      "q1": 650000.0,
+      "median": 903000.0,
+      "q3": 1330000.0,
+      "max": 9000000.0
+    },
+    "Rooms": {
+      "count": 13580,
+      "mean": 2.9379970544919,
+      "std": 0.9557479384215551,
+      "min": 1.0,
+      "q1": 2.0,
+      "median": 3.0,
+      "q3": 3.0,
+      "max": 10.0
+    },
+    "BuildingArea": {
+      "count": 7130,
+      "mean": 151.96764988779805,
+      "std": 541.0145376263513,
+      "min": 0.0,
+      "q1": 93.0,
+      "median": 126.0,
+      "q3": 174.0,
+      "max": 44515.0
+    }
+  },
+  "Price_Rooms": {
+    "r": 0.4966336761865301,
+    "n": 13580
+  }
+}
